@@ -1,0 +1,48 @@
+<!--<configuration>-->
+<!--    &lt;!&ndash; This is a development logging configuration that logs to standard out, for an example of a production-->
+<!--        logging config, see the Akka docs: https://doc.akka.io/docs/akka/2.6/typed/logging.html#logback &ndash;&gt;-->
+<!--    <appender name="STDOUT" target="System.out" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <encoder>-->
+<!--            <pattern>[%date{ISO8601}] [%level] [%logger] [%thread] [%X{akkaSource}] - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">-->
+<!--        <queueSize>1024</queueSize>-->
+<!--        <neverBlock>true</neverBlock>-->
+<!--        <appender-ref ref="STDOUT" />-->
+<!--    </appender>-->
+
+<!--    <root level="INFO">-->
+<!--        <appender-ref ref="ASYNC"/>-->
+<!--    </root>-->
+
+<!--</configuration>-->
+<!--<configuration>-->
+
+<!--    <appender name="STDOUT" class="ch.qos.logback.core.FileAppender">-->
+<!--        <file>main.log</file>-->
+<!--        <append>true</append>-->
+<!--        &lt;!&ndash; encoders are assigned the type-->
+<!--             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default &ndash;&gt;-->
+<!--        <encoder>-->
+<!--            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    <root level="info">-->
+<!--        <appender-ref ref="STDOUT" />-->
+<!--    </root>-->
+<!--</configuration>-->
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} TKD [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
